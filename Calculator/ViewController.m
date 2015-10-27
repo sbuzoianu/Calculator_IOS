@@ -25,10 +25,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     buttonArray = [[NSMutableArray alloc] init];
-    [self addMyButton];
+    [self addLabel];
+    [self addMyButton]; // adaug toate butoanele
     stack=@""; //initializare pe string gol
 }
 
+- (void) addLabel{
+    _consoleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 28, 320, 56)];
+    [_consoleLabel setText:@"Introduceți numărul"];
+    [_consoleLabel setTextAlignment:NSTextAlignmentCenter];
+    [_consoleLabel.layer setBackgroundColor:[UIColor brownColor].CGColor];
+    [_consoleLabel.layer setBorderColor:[UIColor greenColor].CGColor];
+    [_consoleLabel.layer setBorderWidth:1];
+    [_consoleLabel setTextColor:[UIColor colorWithRed:0.871 green:0.871 blue:0.871 alpha:1]];
+    [self.view addSubview:_consoleLabel];
+}
 - (void) addMyButton{
     int t=-1;
     int k=0;
